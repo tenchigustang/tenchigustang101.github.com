@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore vintage computers that changed the world - from the Apple II to the Commodore 64, discover the machines that pioneered personal computing.">
+    <title>Vintage Computers | Tech History Archive</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #e74c3c;
+            --accent-color: #3498db;
+            --bg-color: #ecf0f1;
+            --text-color: #333;
+            --light-gray: #bdc3c7;
+            --card-bg: #fff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #34495e 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+        }
+
+        .logo a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        nav {
+            background-color: var(--primary-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .page-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 20px;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 20px;
+        }
+
+        .article-full {
+            background-color: var(--card-bg);
+            padding: 3rem;
+            margin-bottom: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            scroll-margin-top: 80px;
+        }
+
+        .article-full h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--secondary-color);
+        }
+
+        .article-meta {
+            font-size: 0.9rem;
+            color: var(--light-gray);
+            margin-bottom: 2rem;
+        }
+
+        .article-full h3 {
+            color: var(--primary-color);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .article-full p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .article-full ul, .article-full ol {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-full li {
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+
+        .tech-specs {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-left: 4px solid var(--accent-color);
+            margin: 2rem 0;
+            border-radius: 5px;
+        }
+
+        .tech-specs h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .highlight-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1rem 1.5rem;
+            margin: 2rem 0;
+            border-radius: 5px;
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #555;
+            padding: 1.5rem;
+            border-left: 4px solid var(--secondary-color);
+            margin: 2rem 0;
+            background-color: #f8f9fa;
+        }
+
+        .apparel-cta {
+            background: linear-gradient(135deg, var(--accent-color) 0%, #2980b9 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .apparel-cta h3 {
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .apparel-cta p {
+            margin-bottom: 1.5rem;
+        }
+
+        .apparel-button {
+            display: inline-block;
+            background-color: white;
+            color: var(--accent-color);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .apparel-button:hover {
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3rem 0 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-links {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .social-links h3 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .social-icon:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: var(--light-gray);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .article-full {
+                padding: 2rem 1.5rem;
+            }
+
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1 class="logo"><a href="index.html">⌨ Tech History Archive</a></h1>
+            <p class="tagline">Celebrating the computers that changed the world</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="vintage-computers.html">Vintage Computers</a></li>
+            <li><a href="legendary-programmers.html">Legendary Programmers</a></li>
+            <li><a href="tech-milestones.html">Tech Milestones</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <section class="page-hero">
+        <h1>🖥️ Vintage Computers</h1>
+        <p>The machines that pioneered the personal computing revolution</p>
+    </section>
+
+    <main class="container">
+        <!-- Apple II Article -->
+        <article id="apple-ii" class="article-full">
+            <h2>The Apple II: The Computer That Brought Tech to the Masses</h2>
+            <p class="article-meta">Published: January 15, 2025 | Category: Vintage Computers</p>
+
+            <p>
+                In 1977, when most computers were still the domain of corporations and universities, Steve Wozniak and Steve Jobs introduced a machine that would change everything: the Apple II. This wasn't just another computer—it was a revolution in a beige plastic case, designed to sit on a desk in your home and make computing accessible to everyone.
+            </p>
+
+            <h3>The Birth of Personal Computing</h3>
+            <p>
+                Steve Wozniak, the engineering genius behind the Apple II, designed the computer in his spare time while working at Hewlett-Packard. His goal was simple but revolutionary: create a computer that anyone could use, right out of the box. Unlike the kit computers of the era that required assembly and technical expertise, the Apple II came fully assembled and ready to run.
+            </p>
+
+            <div class="tech-specs">
+                <h4>Technical Specifications</h4>
+                <ul>
+                    <li><strong>Processor:</strong> MOS Technology 6502 running at 1 MHz</li>
+                    <li><strong>Memory:</strong> 4 KB to 48 KB RAM (expandable to 64 KB)</li>
+                    <li><strong>Display:</strong> Color graphics capability, 40×48 or 280×192 pixels</li>
+                    <li><strong>Storage:</strong> Cassette tape interface, optional floppy disk drives</li>
+                    <li><strong>Price:</strong> $1,298 (approximately $6,500 in today's money)</li>
+                    <li><strong>Units Sold:</strong> Over 6 million across the Apple II family</li>
+                </ul>
+            </div>
+
+            <h3>Revolutionary Features</h3>
+            <p>
+                What made the Apple II special wasn't just its accessibility—it was packed with innovations that were years ahead of their time:
+            </p>
+
+            <ul>
+                <li><strong>Color Graphics:</strong> The Apple II was one of the first personal computers to display color graphics, opening up possibilities for gaming, education, and creative applications.</li>
+                <li><strong>Expansion Slots:</strong> Eight internal expansion slots allowed users to add functionality, from additional memory to peripheral cards, making the system incredibly versatile.</li>
+                <li><strong>Built-in BASIC:</strong> The included BASIC programming language in ROM meant users could start programming immediately.</li>
+                <li><strong>Professional Design:</strong> The injection-molded plastic case gave it a professional appearance that looked at home in offices and schools.</li>
+            </ul>
+
+            <h3>Impact on Education and Business</h3>
+            <p>
+                The Apple II found its greatest success in American schools and small businesses. The introduction of VisiCalc, the first spreadsheet program, in 1979 transformed the Apple II from a hobbyist machine into a serious business tool. Suddenly, small businesses could afford computerized accounting and financial planning.
+            </p>
+
+            <div class="highlight-box">
+                <p><strong>Did You Know?</strong> VisiCalc was so popular that many people bought an Apple II just to run this one program. It's often credited as the "killer app" that legitimized personal computers in the business world.</p>
+            </div>
+
+            <p>
+                In education, the Apple II became ubiquitous. Apple's aggressive education pricing strategy put computers in classrooms across America, introducing an entire generation to computing. Educational software like "The Oregon Trail" and "Where in the World is Carmen Sandiego?" became cultural touchstones.
+            </p>
+
+            <h3>The Legacy Lives On</h3>
+            <p>
+                The Apple II line continued production until 1993—an remarkable 16-year run that saw numerous iterations including the Apple II+, IIe, IIc, and IIgs. Its influence on personal computing cannot be overstated. The Apple II proved that computers could be consumer products, that they could be beautiful as well as functional, and that ordinary people could harness their power.
+            </p>
+
+            <div class="quote">
+                "The Apple II was the first computer that was friendly enough and affordable enough for families to buy. It changed the way we thought about computers." — Steve Wozniak
+            </div>
+
+            <p>
+                Today, the Apple II is remembered not just as a product, but as the machine that helped birth the personal computer industry. Its DNA can be traced through every Apple product that followed, from the Macintosh to the iPhone.
+            </p>
+        </article>
+
+        <!-- IBM PC Article -->
+        <article id="ibm-pc" class="article-full">
+            <h2>The IBM PC: How Big Blue Standardized Computing</h2>
+            <p class="article-meta">Published: December 28, 2024 | Category: Vintage Computers</p>
+
+            <p>
+                On August 12, 1981, IBM—the computing giant known for room-sized mainframes—did something unexpected: they released a personal computer. The IBM PC Model 5150 wasn't the first personal computer, nor was it the most innovative. But it did something no other computer had done: it created a standard that would dominate the industry for decades.
+            </p>
+
+            <h3>Breaking IBM's Own Rules</h3>
+            <p>
+                The IBM PC was developed in just 12 months by a small team in Boca Raton, Florida—a dramatic departure from IBM's usual multi-year development cycles. To meet this aggressive timeline, the team made a revolutionary decision: they would use off-the-shelf components and publish the technical specifications openly.
+            </p>
+
+            <div class="tech-specs">
+                <h4>Technical Specifications</h4>
+                <ul>
+                    <li><strong>Processor:</strong> Intel 8088 running at 4.77 MHz</li>
+                    <li><strong>Memory:</strong> 16 KB to 256 KB RAM</li>
+                    <li><strong>Display:</strong> Monochrome or Color Graphics Adapter (CGA)</li>
+                    <li><strong>Storage:</strong> One or two 5.25" floppy drives, optional hard drive</li>
+                    <li><strong>Operating System:</strong> PC DOS (licensed from Microsoft)</li>
+                    <li><strong>Price:</strong> Starting at $1,565 (over $5,000 today)</li>
+                </ul>
+            </div>
+
+            <h3>The Birth of an Industry Standard</h3>
+            <p>
+                IBM's decision to use an open architecture had profound consequences. Because the specifications were published and the components were commercially available, other companies could legally create "IBM-compatible" computers. This spawned an entire industry of clone manufacturers—Compaq, Dell, Gateway, and countless others—all building computers that could run the same software as the IBM PC.
+            </p>
+
+            <p>
+                This standardization solved one of personal computing's biggest problems: software compatibility. Before the IBM PC, buying software was a gamble—you had to make sure it was written for your specific computer model. The IBM PC standard changed that, creating a massive market for software developers.
+            </p>
+
+            <h3>Microsoft's Lucky Break</h3>
+            <p>
+                IBM's choice of operating system would prove to be one of the most consequential decisions in computing history. Rather than develop their own OS, IBM licensed one from a small company called Microsoft. The operating system, PC DOS (and its retail variant MS-DOS), became the foundation of Microsoft's empire.
+            </p>
+
+            <div class="highlight-box">
+                <p><strong>Historical Irony:</strong> IBM initially approached Digital Research about licensing their CP/M operating system. When negotiations stalled, they turned to Microsoft, who quickly purchased QDOS (Quick and Dirty Operating System) and adapted it into MS-DOS. This decision made Bill Gates a billionaire.</p>
+            </div>
+
+            <h3>Business Legitimacy</h3>
+            <p>
+                The IBM name gave personal computers credibility in the business world. When IBM entered the market, corporate purchasing managers—who had been skeptical of personal computers—suddenly took them seriously. The famous marketing campaign with a Charlie Chaplin character emphasized that the IBM PC was approachable and user-friendly, not intimidating.
+            </p>
+
+            <h3>The Platform That Ate the Industry</h3>
+            <p>
+                By 1985, the IBM PC and its clones dominated the personal computer market. Apple's Macintosh, despite being more innovative, struggled to compete with the PC's lower prices and vast software library. The "Wintel" platform (Windows on Intel processors) became synonymous with personal computing.
+            </p>
+
+            <div class="quote">
+                "We built the PC in twelve months because we broke all the rules. We went outside for everything—the operating system, the chip, the disk drives. That was unheard of at IBM." — Don Estridge, IBM PC Project Leader
+            </div>
+
+            <p>
+                Ironically, IBM's open approach ultimately cost them the market they created. Clone manufacturers undercut IBM's prices, and by the mid-1990s, IBM had lost control of the PC market. They eventually sold their PC division to Lenovo in 2005. But the standard they created—the x86 PC architecture—remains dominant today, powering everything from gaming rigs to enterprise servers.
+            </p>
+        </article>
+
+        <!-- Commodore 64 Article -->
+        <article id="commodore-64" class="article-full">
+            <h2>The Commodore 64: Gaming's Greatest Platform</h2>
+            <p class="article-meta">Published: November 20, 2024 | Category: Vintage Computers</p>
+
+            <p>
+                In August 1982, Commodore International released a computer that would become a legend: the Commodore 64. Priced at just $595 (about $1,800 today), the C64 offered capabilities that rivaled computers costing thousands more. It became the best-selling single computer model of all time, with over 17 million units sold—a record that still stands today.
+            </p>
+
+            <h3>Power for the People</h3>
+            <p>
+                The Commodore 64's success was built on a simple formula: deliver maximum computing power at minimum cost. Commodore had a secret weapon—they owned MOS Technology, the company that manufactured the computer's chips. This vertical integration allowed them to produce the C64 at costs their competitors couldn't match.
+            </p>
+
+            <div class="tech-specs">
+                <h4>Technical Specifications</h4>
+                <ul>
+                    <li><strong>Processor:</strong> MOS Technology 6510 at 1.023 MHz (NTSC) / 0.985 MHz (PAL)</li>
+                    <li><strong>Memory:</strong> 64 KB RAM, 20 KB ROM</li>
+                    <li><strong>Graphics:</strong> VIC-II chip, 320×200 pixels, 16 colors</li>
+                    <li><strong>Sound:</strong> SID chip (Sound Interface Device), 3-voice synthesizer</li>
+                    <li><strong>Storage:</strong> Cassette tape or 5.25" floppy drive</li>
+                    <li><strong>Price:</strong> $595 at launch (dropped to $200 by 1983)</li>
+                </ul>
+            </div>
+
+            <h3>The Gaming Revolution</h3>
+            <p>
+                While the C64 was marketed as a home computer for productivity, it became legendary for gaming. The combination of impressive graphics (for the time), the revolutionary SID sound chip, and affordable price made it the ultimate gaming platform of the 1980s.
+            </p>
+
+            <p>
+                The SID chip deserves special mention. Created by engineer Bob Yannes, it was capable of producing sounds that were years ahead of its time. Its three-voice synthesizer could create everything from simple beeps to complex musical compositions. Game composers became celebrities in their own right, with names like Rob Hubbard, Martin Galway, and Ben Daglish creating iconic soundtracks that are still celebrated today.
+            </p>
+
+            <div class="highlight-box">
+                <p><strong>Gaming Legends:</strong> The C64 hosted some of gaming's most influential titles: "The Last Ninja," "International Karate," "Impossible Mission," "Boulder Dash," "Maniac Mansion," and countless others. Many of these games pushed the hardware to its absolute limits through clever programming tricks.</p>
+            </div>
+
+            <h3>The Demo Scene</h3>
+            <p>
+                The C64 gave birth to the "demo scene"—a subculture of programmers who created impressive audio-visual demonstrations that pushed the hardware beyond what was thought possible. These demos featured scrolling graphics, musical compositions, and effects that seemed impossible on the C64's humble hardware. The demo scene continues today, with programmers still creating new demos for the 40-year-old platform.
+            </p>
+
+            <h3>A Computer for Everyone</h3>
+            <p>
+                The C64's affordability made it accessible to families who couldn't justify spending $2,000+ on an Apple II or IBM PC. It introduced millions of people to computing, programming, and gaming. Many of today's game developers, programmers, and tech entrepreneurs got their start on a Commodore 64.
+            </p>
+
+            <div class="quote">
+                "The Commodore 64 was my first computer, and it's where I learned to program. Without it, I wouldn't have the career I have today." — Common refrain from a generation of programmers
+            </div>
+
+            <h3>The Legacy</h3>
+            <p>
+                Production of the C64 continued until 1994, giving it an incredible 12-year run. Even today, it maintains a devoted following. Enthusiasts create new games, hardware expansions, and even entire operating systems for the platform. The C64 has been re-released multiple times, most recently as the C64 Mini and THEC64, allowing new generations to experience the magic of this legendary machine.
+            </p>
+
+            <p>
+                The Commodore 64 proved that computers didn't have to be expensive to be powerful, and that gaming could be a legitimate use case for home computers. Its influence on gaming culture, the demo scene, and an entire generation's introduction to computing cannot be overstated.
+            </p>
+        </article>
+
+        <!-- Call to Action -->
+        <div class="apparel-cta">
+            <h3>💾 Celebrate Vintage Computing in Style</h3>
+            <p>
+                Love these classic machines? Check out our collection of vintage tech-inspired apparel featuring iconic computers, retro designs, and tributes to the golden age of computing. Perfect for any tech enthusiast or computing historian!
+            </p>
+            <a href="https://techgeeksapparel.com" class="apparel-button" target="_blank">Shop Vintage Tech Apparel</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Tech History Archive</h3>
+                    <p>Preserving the legacy of computing pioneers and the machines that transformed our world.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Explore</h3>
+                    <ul>
+                        <li><a href="vintage-computers.html">Vintage Computers</a></li>
+                        <li><a href="legendary-programmers.html">Legendary Programmers</a></li>
+                        <li><a href="tech-milestones.html">Tech Milestones</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="https://techgeeksapparel.com" target="_blank">TechGeeks Apparel</a></li>
+                        <li><a href="https://archive.org/details/computersandtechvideos" target="_blank">Computer History Videos</a></li>
+                        <li><a href="https://www.computerhistory.org/" target="_blank">Computer History Museum</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="https://twitter.com/techgeeksapparel" class="social-icon" target="_blank" title="Twitter">
+                        <span>𝕏</span>
+                    </a>
+                    <a href="https://facebook.com/techgeeksapparel" class="social-icon" target="_blank" title="Facebook">
+                        <span>f</span>
+                    </a>
+                    <a href="https://instagram.com/techgeeksapparel" class="social-icon" target="_blank" title="Instagram">
+                        <span>📷</span>
+                    </a>
+                    <a href="https://linkedin.com/company/techgeeksapparel" class="social-icon" target="_blank" title="LinkedIn">
+                        <span>in</span>
+                    </a>
+                    <a href="https://github.com/techgeeksapparel" class="social-icon" target="_blank" title="GitHub">
+                        <span>⚙</span>
+                    </a>
+                    <a href="https://pinterest.com/techgeeksapparel" class="social-icon" target="_blank" title="Pinterest">
+                        <span>📌</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 Tech History Archive. Created with ❤️ for vintage computing enthusiasts. | 
+                <a href="https://techgeeksapparel.com" target="_blank" style="color: var(--accent-color);">Vintage Tech-Inspired Apparel</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
