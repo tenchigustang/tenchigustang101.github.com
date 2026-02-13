@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore major tech milestones - from the first moon landing computer to the birth of the internet, discover moments that changed computing forever.">
+    <title>Tech Milestones | Tech History Archive</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #e74c3c;
+            --accent-color: #3498db;
+            --bg-color: #ecf0f1;
+            --text-color: #333;
+            --light-gray: #bdc3c7;
+            --card-bg: #fff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #34495e 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+        }
+
+        .logo a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        nav {
+            background-color: var(--primary-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .page-hero {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 3rem 20px;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 20px;
+        }
+
+        .article-full {
+            background-color: var(--card-bg);
+            padding: 3rem;
+            margin-bottom: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            scroll-margin-top: 80px;
+        }
+
+        .article-full h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--secondary-color);
+        }
+
+        .article-meta {
+            font-size: 0.9rem;
+            color: var(--light-gray);
+            margin-bottom: 2rem;
+        }
+
+        .article-full h3 {
+            color: var(--primary-color);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .article-full p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .article-full ul, .article-full ol {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-full li {
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+
+        .milestone-facts {
+            background-color: #e8f4f8;
+            padding: 1.5rem;
+            border-left: 4px solid var(--accent-color);
+            margin: 2rem 0;
+            border-radius: 5px;
+        }
+
+        .milestone-facts h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .highlight-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1rem 1.5rem;
+            margin: 2rem 0;
+            border-radius: 5px;
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #555;
+            padding: 1.5rem;
+            border-left: 4px solid var(--secondary-color);
+            margin: 2rem 0;
+            background-color: #f8f9fa;
+        }
+
+        .timeline-event {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin: 2rem 0;
+            border-left: 5px solid var(--accent-color);
+        }
+
+        .timeline-event h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .apparel-cta {
+            background: linear-gradient(135deg, var(--accent-color) 0%, #2980b9 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .apparel-cta h3 {
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .apparel-cta p {
+            margin-bottom: 1.5rem;
+        }
+
+        .apparel-button {
+            display: inline-block;
+            background-color: white;
+            color: var(--accent-color);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .apparel-button:hover {
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3rem 0 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-links {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .social-links h3 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .social-icon:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: var(--light-gray);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .article-full {
+                padding: 2rem 1.5rem;
+            }
+
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1 class="logo"><a href="index.html">⌨ Tech History Archive</a></h1>
+            <p class="tagline">Celebrating the computers that changed the world</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="vintage-computers.html">Vintage Computers</a></li>
+            <li><a href="legendary-programmers.html">Legendary Programmers</a></li>
+            <li><a href="tech-milestones.html">Tech Milestones</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <section class="page-hero">
+        <h1>🚀 Tech Milestones</h1>
+        <p>Moments that transformed computing and changed the world</p>
+    </section>
+
+    <main class="container">
+        <!-- Apollo Computer Article -->
+        <article id="apollo-computer" class="article-full">
+            <h2>1969: The Moon Landing's Computing Marvel</h2>
+            <p class="article-meta">Published: December 12, 2024 | Category: Tech Milestones</p>
+
+            <p>
+                On July 20, 1969, as Neil Armstrong descended toward the lunar surface, a computer alarm sounded in the cramped Apollo 11 Lunar Module. The Apollo Guidance Computer (AGC) was overloaded, yet it continued to function perfectly, prioritizing critical tasks and guiding the spacecraft to a safe landing. This remarkable piece of engineering had less processing power than a modern calculator, yet it navigated humans to the Moon and back—a testament to brilliant engineering and elegant software design.
+            </p>
+
+            <div class="milestone-facts">
+                <h4>Apollo Guidance Computer Specifications</h4>
+                <ul>
+                    <li><strong>Processing Speed:</strong> 0.043 MHz (modern phones: ~2,500 MHz)</li>
+                    <li><strong>Memory (RAM):</strong> 4 KB (your phone: 4-16 GB)</li>
+                    <li><strong>Storage (ROM):</strong> 72 KB</li>
+                    <li><strong>Weight:</strong> 70 pounds</li>
+                    <li><strong>Technology:</strong> Integrated circuits (very cutting-edge for 1969)</li>
+                    <li><strong>Cost:</strong> Each computer cost roughly $150,000 (over $1 million today)</li>
+                </ul>
+            </div>
+
+            <h3>Revolutionary Design</h3>
+            <p>
+                The AGC was one of the first computers to use integrated circuits, making it small enough to fit in a spacecraft. This decision to use ICs helped kickstart the semiconductor industry—NASA's orders represented a significant portion of early IC production, driving down costs and spurring innovation.
+            </p>
+
+            <p>
+                The computer had to be extraordinarily reliable. There was no possibility of a reboot or software patch once the astronauts left Earth. The software was literally woven into core rope memory—a form of read-only memory where each bit was physically represented by whether a wire passed through or around a magnetic core. "Programming" meant physically threading wires through tiny rings.
+            </p>
+
+            <h3>Margaret Hamilton's Software Engineering</h3>
+            <p>
+                The AGC's software was designed by a team led by Margaret Hamilton at MIT. At just 33 years old, Hamilton pioneered software engineering practices that are still used today. She insisted on extensive testing, error-checking, and priority-based task scheduling.
+            </p>
+
+            <div class="quote">
+                "There was no second chance. We knew that we had to be right the first time, every time." — Margaret Hamilton, AGC Software Lead
+            </div>
+
+            <p>
+                Hamilton's team developed software that could handle multiple tasks simultaneously, prioritize critical operations, and recover from errors—all concepts that were revolutionary in 1969. When alarms sounded during Apollo 11's descent, it was Hamilton's priority scheduling that allowed the computer to continue executing essential navigation tasks while shedding less critical processes.
+            </p>
+
+            <h3>The Famous 1202 Alarm</h3>
+            <p>
+                During Apollo 11's lunar descent, radar data was overwhelming the computer. Alarm 1202 indicated that the computer was being asked to do too much. But because of Hamilton's priority scheduling, the AGC dropped lower-priority tasks and kept running the critical guidance programs. Flight controllers, trained to understand these alarms, gave the "go" to continue the descent.
+            </p>
+
+            <div class="highlight-box">
+                <p><strong>Fun Fact:</strong> The AGC had a "verb-noun" interface. Astronauts would enter a verb (action) and noun (target) using a keypad called the DSKY (Display and Keyboard). For example, "Verb 06 Noun 62" meant "Display the velocity data." This interface influenced how humans interact with computers for decades.</p>
+            </div>
+
+            <h3>Computing Firsts</h3>
+            <p>
+                The Apollo Guidance Computer pioneered several concepts that became fundamental to modern computing:
+            </p>
+
+            <ul>
+                <li><strong>Priority Scheduling:</strong> The ability to prioritize critical tasks over less important ones</li>
+                <li><strong>Error Detection and Recovery:</strong> The system could detect problems and recover gracefully</li>
+                <li><strong>Real-time Operating System:</strong> Managing multiple tasks with strict timing requirements</li>
+                <li><strong>Integrated Circuits in Production:</strong> First large-scale use of ICs, helping launch the semiconductor industry</li>
+                <li><strong>Software Engineering as Discipline:</strong> Hamilton's team developed testing and verification methods still used today</li>
+            </ul>
+
+            <h3>Legacy: The Computer That Launched an Industry</h3>
+            <p>
+                The Apollo program's need for compact, reliable computers drove the development of integrated circuits and software engineering. NASA's orders gave the nascent semiconductor industry the capital and credibility it needed to grow. Many of the engineers who worked on Apollo went on to found Silicon Valley companies.
+            </p>
+
+            <div class="timeline-event">
+                <h4>Impact Timeline</h4>
+                <ul>
+                    <li><strong>1969:</strong> Apollo 11 lands on the Moon using the AGC</li>
+                    <li><strong>1970s:</strong> Software engineering emerges as a formal discipline</li>
+                    <li><strong>1971:</strong> Intel releases the 4004, the first commercial microprocessor</li>
+                    <li><strong>1980s:</strong> Personal computers bring computing power to millions</li>
+                    <li><strong>Today:</strong> The smartphone in your pocket is millions of times more powerful than the AGC</li>
+                </ul>
+            </div>
+
+            <p>
+                The Apollo Guidance Computer proved that computers could be trusted with human lives in the most extreme conditions. It showed that thoughtful software design could overcome hardware limitations. And it demonstrated that the seemingly impossible—putting humans on the Moon—could be achieved through brilliant engineering and meticulous programming.
+            </p>
+
+            <p>
+                Every spacecraft, every aircraft flight control system, every life-critical computer system owes a debt to the Apollo Guidance Computer and the team that created it. They didn't just send humans to the Moon—they showed us what computers could become.
+            </p>
+        </article>
+
+        <!-- Internet Birth Article -->
+        <article id="internet-birth" class="article-full">
+            <h2>1969: The Birth of the Internet (ARPANET)</h2>
+            <p class="article-meta">Published: October 29, 2024 | Category: Tech Milestones</p>
+
+            <p>
+                On October 29, 1969, at 10:30 PM, a computer at UCLA attempted to send a message to a computer at Stanford Research Institute, about 400 miles away. The message was supposed to be "LOGIN," but the system crashed after just two letters: "LO." Nevertheless, this imperfect first message marked the birth of ARPANET—the network that would evolve into the internet.
+            </p>
+
+            <div class="milestone-facts">
+                <h4>ARPANET First Message Details</h4>
+                <ul>
+                    <li><strong>Date:</strong> October 29, 1969, 10:30 PM</li>
+                    <li><strong>From:</strong> UCLA (Charley Kline, student programmer)</li>
+                    <li><strong>To:</strong> Stanford Research Institute (Bill Duvall)</li>
+                    <li><strong>Intended Message:</strong> "LOGIN"</li>
+                    <li><strong>Actual Message:</strong> "LO" (system crashed before completing)</li>
+                    <li><strong>Second Attempt:</strong> Successful, about an hour later</li>
+                </ul>
+            </div>
+
+            <h3>The Problem: Incompatible Networks</h3>
+            <p>
+                In the 1960s, computers couldn't talk to each other. Each manufacturer had proprietary systems, and connecting different types of computers was nearly impossible. The U.S. Department of Defense's Advanced Research Projects Agency (ARPA) wanted to solve this problem—they had computers at universities and research centers across the country, and they needed them to share data.
+            </p>
+
+            <p>
+                The solution was radical: create a network where any computer could communicate with any other computer, regardless of manufacturer. This network would be decentralized—no single point of failure—and resilient enough to survive even a nuclear attack.
+            </p>
+
+            <h3>Packet Switching: The Big Idea</h3>
+            <p>
+                The key innovation was packet switching, independently developed by Paul Baran in the U.S. and Donald Davies in the UK. Instead of dedicating a continuous connection between two computers (like a phone call), data would be broken into small packets, each labeled with a destination address. These packets could take different routes through the network and be reassembled at the destination.
+            </p>
+
+            <div class="quote">
+                "The process of technological change is like building a cathedral. Over the course of several hundred years, new people come along and each lays down a block on top of the old foundations." — Paul Baran, Packet Switching Pioneer
+            </div>
+
+            <h3>The First Four Nodes</h3>
+            <p>
+                ARPANET started with four nodes, installed in 1969:
+            </p>
+
+            <div class="timeline-event">
+                <h4>ARPANET's Original Four Sites</h4>
+                <ul>
+                    <li><strong>September 1969:</strong> UCLA (University of California, Los Angeles)</li>
+                    <li><strong>October 1969:</strong> Stanford Research Institute</li>
+                    <li><strong>November 1969:</strong> UC Santa Barbara</li>
+                    <li><strong>December 1969:</strong> University of Utah</li>
+                </ul>
+            </div>
+
+            <p>
+                Each site had an Interface Message Processor (IMP)—a refrigerator-sized computer that acted as a router, forwarding packets between nodes. These IMPs were designed by Bolt, Beranek and Newman (BBN), a Cambridge-based company that won the ARPANET contract.
+            </p>
+
+            <h3>Early Applications: Email and File Transfer</h3>
+            <p>
+                The first applications on ARPANET were simple but revolutionary. In 1971, Ray Tomlinson sent the first network email—he chose the "@" symbol to separate the user name from the computer name, a convention we still use today. File Transfer Protocol (FTP) allowed computers to share files. Telnet let users remotely access computers across the network.
+            </p>
+
+            <div class="highlight-box">
+                <p><strong>The @ Symbol:</strong> Ray Tomlinson chose @ for email addresses because it was rarely used in programming, was on every keyboard, and conveniently meant "at." His first email was probably something like "QWERTYUIOP"—he was just testing, after all.</p>
+            </div>
+
+            <h3>Growth and Evolution</h3>
+            <p>
+                ARPANET grew rapidly throughout the 1970s. By 1971, there were 15 nodes. By 1981, there were 213. But ARPANET was just one network—other networks like NSFNET (connecting universities), BITNET (for IBM mainframes), and various international networks were also emerging.
+            </p>
+
+            <p>
+                The problem: these networks couldn't talk to each other. Each used different protocols and addressing schemes.
+            </p>
+
+            <h3>TCP/IP: The Universal Language</h3>
+            <p>
+                The solution came from Vint Cerf and Bob Kahn, who developed TCP/IP (Transmission Control Protocol/Internet Protocol) in the 1970s. TCP/IP provided a universal language that all networks could use to communicate, regardless of their underlying technology.
+            </p>
+
+            <p>
+                On January 1, 1983, ARPANET officially switched to TCP/IP. This date is often considered the birth of the modern internet—the moment when all these separate networks became a network of networks, an "internet."
+            </p>
+
+            <h3>From Military Network to World-Changing Platform</h3>
+            <p>
+                ARPANET was decommissioned in 1990, having served its purpose. By then, the internet had grown far beyond its military origins. Tim Berners-Lee's World Wide Web (1989) made the internet accessible to non-technical users. The National Science Foundation lifted restrictions on commercial use in 1991, opening the floodgates for businesses and consumers.
+            </p>
+
+            <div class="timeline-event">
+                <h4>Key Internet Milestones</h4>
+                <ul>
+                    <li><strong>1969:</strong> ARPANET's first message</li>
+                    <li><strong>1971:</strong> First email sent</li>
+                    <li><strong>1983:</strong> TCP/IP becomes standard</li>
+                    <li><strong>1989:</strong> Tim Berners-Lee invents the World Wide Web</li>
+                    <li><strong>1991:</strong> Commercial internet service providers emerge</li>
+                    <li><strong>1993:</strong> Mosaic browser makes the web accessible</li>
+                    <li><strong>2000s:</strong> Social media, smartphones, cloud computing</li>
+                    <li><strong>Today:</strong> Over 5 billion internet users worldwide</li>
+                </ul>
+            </div>
+
+            <h3>The Internet's Radical Design</h3>
+            <p>
+                What made the internet successful was its design philosophy: decentralized, open, and flexible. No single entity controlled it. Anyone could connect to it. Any type of computer could use it. This openness allowed innovation to flourish—nobody needed permission to create a new service or application.
+            </p>
+
+            <div class="quote">
+                "We rejected kings, presidents, and voting. We believe in rough consensus and running code." — David Clark, Internet Pioneer, describing the internet's governance philosophy
+            </div>
+
+            <h3>Legacy: The Network That Changed Everything</h3>
+            <p>
+                That crashed "LO" message in 1969 was the first spark of something that would transform human civilization. The internet has revolutionized commerce, education, entertainment, communication, and nearly every aspect of modern life. It has connected billions of people, democratized information, and enabled innovations from social media to cloud computing to artificial intelligence.
+            </p>
+
+            <p>
+                The internet was built on radical ideas: that networks should be open and interoperable, that communication should be resilient and decentralized, and that innovation should be permissionless. These principles, established by ARPANET's pioneers, created the most powerful platform for human connection and creativity ever invented.
+            </p>
+
+            <p>
+                Every email, every web page, every video stream, every online transaction—all of it traces back to that October night in 1969 when a crashed message spelled "LO" and inadvertently said "hello" to the networked future.
+            </p>
+        </article>
+
+        <!-- Call to Action -->
+        <div class="apparel-cta">
+            <h3>🌐 Celebrate Computing History</h3>
+            <p>
+                From moon landings to the birth of the internet, these milestones changed our world. Honor computing history with our vintage tech-inspired apparel featuring retro designs, classic tech icons, and tributes to the innovations that shaped our digital age.
+            </p>
+            <a href="https://techgeeksapparel.com" class="apparel-button" target="_blank">Shop Vintage Tech Apparel</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Tech History Archive</h3>
+                    <p>Preserving the legacy of computing pioneers and the machines that transformed our world.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Explore</h3>
+                    <ul>
+                        <li><a href="vintage-computers.html">Vintage Computers</a></li>
+                        <li><a href="legendary-programmers.html">Legendary Programmers</a></li>
+                        <li><a href="tech-milestones.html">Tech Milestones</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="https://techgeeksapparel.com" target="_blank">TechGeeks Apparel</a></li>
+                        <li><a href="https://archive.org/details/computersandtechvideos" target="_blank">Computer History Videos</a></li>
+                        <li><a href="https://www.computerhistory.org/" target="_blank">Computer History Museum</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="https://twitter.com/techgeeksapparel" class="social-icon" target="_blank" title="Twitter">
+                        <span>𝕏</span>
+                    </a>
+                    <a href="https://facebook.com/techgeeksapparel" class="social-icon" target="_blank" title="Facebook">
+                        <span>f</span>
+                    </a>
+                    <a href="https://instagram.com/techgeeksapparel" class="social-icon" target="_blank" title="Instagram">
+                        <span>📷</span>
+                    </a>
+                    <a href="https://linkedin.com/company/techgeeksapparel" class="social-icon" target="_blank" title="LinkedIn">
+                        <span>in</span>
+                    </a>
+                    <a href="https://github.com/techgeeksapparel" class="social-icon" target="_blank" title="GitHub">
+                        <span>⚙</span>
+                    </a>
+                    <a href="https://pinterest.com/techgeeksapparel" class="social-icon" target="_blank" title="Pinterest">
+                        <span>📌</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 Tech History Archive. Created with ❤️ for vintage computing enthusiasts. | 
+                <a href="https://techgeeksapparel.com" target="_blank" style="color: var(--accent-color);">Vintage Tech-Inspired Apparel</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
