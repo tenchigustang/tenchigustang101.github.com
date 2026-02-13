@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tech History Archive - Celebrating vintage computers, legendary programmers, and the milestones that shaped our digital world.">
+    <title>Tech History Archive | Celebrating the Computers That Changed the World</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #e74c3c;
+            --accent-color: #3498db;
+            --bg-color: #ecf0f1;
+            --text-color: #333;
+            --light-gray: #bdc3c7;
+            --card-bg: #fff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #34495e 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--primary-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23555" width="1200" height="400"/><text x="50%" y="50%" fill="%23888" font-size="120" font-family="monospace" text-anchor="middle" dominant-baseline="middle">01010101</text></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 4rem 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 20px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+
+        /* Featured Articles Grid */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .article-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+
+        .article-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .article-content {
+            padding: 1.5rem;
+        }
+
+        .article-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .article-excerpt {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .article-meta {
+            font-size: 0.9rem;
+            color: var(--light-gray);
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        /* About Section */
+        .about-section {
+            background-color: var(--card-bg);
+            padding: 3rem;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .about-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .about-section p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .apparel-link {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 1rem;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .apparel-link:hover {
+            background-color: #2980b9;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3rem 0 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Social Links Section */
+        .social-links {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .social-links h3 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .social-icon:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: var(--light-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-section {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <h1 class="logo">⌨ Tech History Archive</h1>
+            <p class="tagline">Celebrating the computers that changed the world</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="vintage-computers.html">Vintage Computers</a></li>
+            <li><a href="legendary-programmers.html">Legendary Programmers</a></li>
+            <li><a href="tech-milestones.html">Tech Milestones</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Journey Through Computing History</h1>
+            <p>Explore the machines, minds, and moments that built our digital world</p>
+            <a href="vintage-computers.html" class="cta-button">Start Exploring</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h2 class="section-title">Featured Articles</h2>
+        
+        <div class="articles-grid">
+            <!-- Article 1 -->
+            <article class="article-card">
+                <div class="article-image">🖥️</div>
+                <div class="article-content">
+                    <h3 class="article-title">The Apple II: The Computer That Brought Tech to the Masses</h3>
+                    <p class="article-meta">Published: January 2025</p>
+                    <p class="article-excerpt">
+                        In 1977, the Apple II revolutionized personal computing by making technology accessible to everyday people. Discover how Steve Wozniak's engineering genius created a machine that would define a generation.
+                    </p>
+                    <a href="vintage-computers.html#apple-ii" class="read-more">Read More →</a>
+                </div>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="article-card">
+                <div class="article-image">👨‍💻</div>
+                <div class="article-content">
+                    <h3 class="article-title">Grace Hopper: The Queen of Code</h3>
+                    <p class="article-meta">Published: January 2025</p>
+                    <p class="article-excerpt">
+                        Rear Admiral Grace Hopper didn't just write code—she invented the compiler and pioneered the concept of machine-independent programming languages. Her legacy lives on in every line of code written today.
+                    </p>
+                    <a href="legendary-programmers.html#grace-hopper" class="read-more">Read More →</a>
+                </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="article-card">
+                <div class="article-image">🚀</div>
+                <div class="article-content">
+                    <h3 class="article-title">1969: The Moon Landing's Computing Marvel</h3>
+                    <p class="article-meta">Published: December 2024</p>
+                    <p class="article-excerpt">
+                        The Apollo Guidance Computer had less processing power than a modern calculator, yet it navigated astronauts to the Moon and back. Explore the engineering miracle that made history.
+                    </p>
+                    <a href="tech-milestones.html#apollo-computer" class="read-more">Read More →</a>
+                </div>
+            </article>
+
+            <!-- Article 4 -->
+            <article class="article-card">
+                <div class="article-image">💾</div>
+                <div class="article-content">
+                    <h3 class="article-title">The IBM PC: How Big Blue Standardized Computing</h3>
+                    <p class="article-meta">Published: December 2024</p>
+                    <p class="article-excerpt">
+                        The 1981 IBM PC didn't just create a product—it established an entire industry standard. Learn how this machine's open architecture changed everything.
+                    </p>
+                    <a href="vintage-computers.html#ibm-pc" class="read-more">Read More →</a>
+                </div>
+            </article>
+
+            <!-- Article 5 -->
+            <article class="article-card">
+                <div class="article-image">🎮</div>
+                <div class="article-content">
+                    <h3 class="article-title">The Commodore 64: Gaming's Greatest Platform</h3>
+                    <p class="article-meta">Published: November 2024</p>
+                    <p class="article-excerpt">
+                        With over 17 million units sold, the C64 became the best-selling single computer model of all time. Discover why this 8-bit wonder still captures hearts today.
+                    </p>
+                    <a href="vintage-computers.html#commodore-64" class="read-more">Read More →</a>
+                </div>
+            </article>
+
+            <!-- Article 6 -->
+            <article class="article-card">
+                <div class="article-image">⚡</div>
+                <div class="article-content">
+                    <h3 class="article-title">Alan Turing: The Father of Computer Science</h3>
+                    <p class="article-meta">Published: November 2024</p>
+                    <p class="article-excerpt">
+                        Before computers existed, Alan Turing imagined them. His theoretical work laid the foundation for everything we know about computation and artificial intelligence.
+                    </p>
+                    <a href="legendary-programmers.html#alan-turing" class="read-more">Read More →</a>
+                </div>
+            </article>
+        </div>
+
+        <!-- About Section -->
+        <section class="about-section">
+            <h2>About Tech History Archive</h2>
+            <p>
+                Welcome to Tech History Archive, a dedicated space for preserving and celebrating the incredible journey of computing history. From the room-sized mainframes of the 1950s to the sleek personal computers that revolutionized the 1980s, we document the machines, minds, and milestones that shaped our digital world.
+            </p>
+            <p>
+                Our mission is to honor the innovators who dared to dream of a computerized future, the engineers who made it possible, and the machines that became icons of technological progress. Whether you're a vintage computing enthusiast, a tech historian, or simply curious about where it all began, you'll find stories that inspire and educate.
+            </p>
+            <p>
+                <strong>Celebrate vintage tech in style!</strong> Check out our vintage tech-inspired apparel collection that pays homage to the computers and innovations that changed everything.
+            </p>
+            <a href="https://techgeeksapparel.com" class="apparel-link" target="_blank">Shop Vintage Tech Apparel →</a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Tech History Archive</h3>
+                    <p>Preserving the legacy of computing pioneers and the machines that transformed our world.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Explore</h3>
+                    <ul>
+                        <li><a href="vintage-computers.html">Vintage Computers</a></li>
+                        <li><a href="legendary-programmers.html">Legendary Programmers</a></li>
+                        <li><a href="tech-milestones.html">Tech Milestones</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="https://techgeeksapparel.com" target="_blank">TechGeeks Apparel</a></li>
+                        <li><a href="https://archive.org/details/computersandtechvideos" target="_blank">Computer History Videos</a></li>
+                        <li><a href="https://www.computerhistory.org/" target="_blank">Computer History Museum</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Social Links Section - Easy to Edit -->
+            <div class="social-links">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <!-- Edit these links as needed -->
+                    <a href="https://twitter.com/techgeeksapparel" class="social-icon" target="_blank" title="Twitter">
+                        <span>𝕏</span>
+                    </a>
+                    <a href="https://facebook.com/techgeeksapparel" class="social-icon" target="_blank" title="Facebook">
+                        <span>f</span>
+                    </a>
+                    <a href="https://instagram.com/techgeeksapparel" class="social-icon" target="_blank" title="Instagram">
+                        <span>📷</span>
+                    </a>
+                    <a href="https://linkedin.com/company/techgeeksapparel" class="social-icon" target="_blank" title="LinkedIn">
+                        <span>in</span>
+                    </a>
+                    <a href="https://github.com/techgeeksapparel" class="social-icon" target="_blank" title="GitHub">
+                        <span>⚙</span>
+                    </a>
+                    <a href="https://pinterest.com/techgeeksapparel" class="social-icon" target="_blank" title="Pinterest">
+                        <span>📌</span>
+                    </a>
+                    <!-- Add more social links here as needed -->
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 Tech History Archive. Created with ❤️ for vintage computing enthusiasts. | 
+                <a href="https://techgeeksapparel.com" target="_blank" style="color: var(--accent-color);">Vintage Tech-Inspired Apparel</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
