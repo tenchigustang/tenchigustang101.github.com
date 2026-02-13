@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Tech History Archive - Our mission to preserve and celebrate the legacy of computing pioneers and vintage technology.">
+    <title>About Us | Tech History Archive</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #e74c3c;
+            --accent-color: #3498db;
+            --bg-color: #ecf0f1;
+            --text-color: #333;
+            --light-gray: #bdc3c7;
+            --card-bg: #fff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #34495e 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+        }
+
+        .logo a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        nav {
+            background-color: var(--primary-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .page-hero {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            color: #333;
+            padding: 3rem 20px;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 20px;
+        }
+
+        .content-section {
+            background-color: var(--card-bg);
+            padding: 3rem;
+            margin-bottom: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .content-section h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--secondary-color);
+        }
+
+        .content-section h3 {
+            color: var(--primary-color);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .content-section p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .content-section ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .content-section li {
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+
+        .mission-box {
+            background: linear-gradient(135deg, var(--accent-color) 0%, #2980b9 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .mission-box h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .value-card {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .value-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .apparel-highlight {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 5px;
+        }
+
+        .apparel-highlight h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-top: 1rem;
+        }
+
+        .cta-button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3rem 0 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-links {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .social-links h3 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .social-icon:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: var(--light-gray);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .content-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1 class="logo"><a href="index.html">⌨ Tech History Archive</a></h1>
+            <p class="tagline">Celebrating the computers that changed the world</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="vintage-computers.html">Vintage Computers</a></li>
+            <li><a href="legendary-programmers.html">Legendary Programmers</a></li>
+            <li><a href="tech-milestones.html">Tech Milestones</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <section class="page-hero">
+        <h1>📚 About Tech History Archive</h1>
+        <p>Preserving the legacy of computing pioneers</p>
+    </section>
+
+    <main class="container">
+        <section class="content-section">
+            <h2>Our Mission</h2>
+            
+            <div class="mission-box">
+                <h3>Celebrating the Computers That Changed the World</h3>
+                <p>
+                    We preserve and share the stories of vintage computers, legendary programmers, and technological milestones that shaped our digital age. Our mission is to honor the innovators who dared to dream of a computerized future and the machines that made it possible.
+                </p>
+            </div>
+
+            <p>
+                Welcome to Tech History Archive, a dedicated space for vintage computing enthusiasts, tech historians, and anyone curious about the fascinating journey from room-sized mainframes to the sleek devices we use today. We believe that understanding where technology came from helps us appreciate where it's going.
+            </p>
+
+            <h3>What We Cover</h3>
+            <ul>
+                <li><strong>Vintage Computers:</strong> In-depth articles about iconic machines like the Apple II, IBM PC, Commodore 64, and many others that pioneered personal computing.</li>
+                <li><strong>Legendary Programmers:</strong> Profiles of brilliant minds like Alan Turing, Grace Hopper, and other pioneers who laid the foundations of computer science.</li>
+                <li><strong>Tech Milestones:</strong> Stories of breakthrough moments—from the Apollo Guidance Computer to the birth of the internet—that transformed how we live and work.</li>
+                <li><strong>Computing Culture:</strong> The impact of technology on society, gaming culture, the demo scene, and how computers changed entertainment, business, and education.</li>
+            </ul>
+
+            <h3>Why Computing History Matters</h3>
+            <p>
+                Today's technology didn't appear out of nowhere. Every smartphone, laptop, and cloud service stands on the shoulders of decades of innovation, experimentation, and sometimes failure. By studying vintage computers and early programming pioneers, we gain:
+            </p>
+            <ul>
+                <li><strong>Perspective:</strong> Understanding the constraints early developers faced helps us appreciate modern capabilities.</li>
+                <li><strong>Inspiration:</strong> The creativity and problem-solving of early computing pioneers still inspires today's innovators.</li>
+                <li><strong>Context:</strong> Many fundamental concepts in computing—from GUIs to networking—were invented decades ago and continue to shape technology today.</li>
+                <li><strong>Appreciation:</strong> Recognizing the human stories behind the technology—the dreamers, engineers, and visionaries who made it all possible.</li>
+            </ul>
+
+            <h3>Our Values</h3>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h4>🎯 Accuracy</h4>
+                    <p>We research thoroughly to ensure our historical accounts are factual and well-documented.</p>
+                </div>
+                <div class="value-card">
+                    <h4>📖 Education</h4>
+                    <p>We make complex technical history accessible and engaging for enthusiasts at all knowledge levels.</p>
+                </div>
+                <div class="value-card">
+                    <h4>🌟 Passion</h4>
+                    <p>We're genuinely excited about vintage technology and that enthusiasm drives our content.</p>
+                </div>
+                <div class="value-card">
+                    <h4>🤝 Community</h4>
+                    <p>We celebrate the community of vintage computing enthusiasts who keep this history alive.</p>
+                </div>
+            </div>
+
+            <h3>Who We Are</h3>
+            <p>
+                Tech History Archive is created and maintained by passionate technology enthusiasts who believe that the history of computing deserves to be preserved and celebrated. We combine technical knowledge with storytelling to bring vintage technology to life for a new generation.
+            </p>
+
+            <p>
+                Whether you grew up programming on a Commodore 64, remember the excitement of dial-up internet, or you're discovering computing history for the first time, we're here to share the stories that shaped our digital world.
+            </p>
+
+            <div class="apparel-highlight">
+                <h3>💾 Vintage Tech-Inspired Apparel</h3>
+                <p>
+                    We're proud to partner with <strong>TechGeeks Apparel</strong>, offering vintage tech-inspired clothing that celebrates the computers, innovations, and culture that changed everything. From retro computer designs to tributes to legendary programmers, their apparel lets you wear your love of computing history with pride.
+                </p>
+                <p>
+                    Each piece honors the golden age of computing—perfect for vintage tech enthusiasts, programmers, and anyone who appreciates the machines that built our digital world.
+                </p>
+                <a href="https://techgeeksapparel.com" class="cta-button" target="_blank">Explore Vintage Tech Apparel</a>
+            </div>
+
+            <h3>Join Our Journey</h3>
+            <p>
+                Whether you're a seasoned vintage computing collector, a developer curious about the roots of your profession, or simply someone who appreciates great engineering and human ingenuity, we invite you to explore our archive. Discover the machines that pioneered personal computing, learn about the brilliant minds who made it possible, and celebrate the milestones that transformed our world.
+            </p>
+
+            <p>
+                The history of computing is still being written, and understanding where we've been helps us imagine where we're going. Welcome to Tech History Archive—where every byte has a story.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Tech History Archive</h3>
+                    <p>Preserving the legacy of computing pioneers and the machines that transformed our world.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Explore</h3>
+                    <ul>
+                        <li><a href="vintage-computers.html">Vintage Computers</a></li>
+                        <li><a href="legendary-programmers.html">Legendary Programmers</a></li>
+                        <li><a href="tech-milestones.html">Tech Milestones</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="https://techgeeksapparel.com" target="_blank">TechGeeks Apparel</a></li>
+                        <li><a href="https://archive.org/details/computersandtechvideos" target="_blank">Computer History Videos</a></li>
+                        <li><a href="https://www.computerhistory.org/" target="_blank">Computer History Museum</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <!-- EDIT THESE LINKS TO YOUR ACTUAL SOCIAL MEDIA PROFILES -->
+                    <a href="https://twitter.com/techgeeksapparel" class="social-icon" target="_blank" title="Twitter">
+                        <span>𝕏</span>
+                    </a>
+                    <a href="https://facebook.com/techgeeksapparel" class="social-icon" target="_blank" title="Facebook">
+                        <span>f</span>
+                    </a>
+                    <a href="https://instagram.com/techgeeksapparel" class="social-icon" target="_blank" title="Instagram">
+                        <span>📷</span>
+                    </a>
+                    <a href="https://linkedin.com/company/techgeeksapparel" class="social-icon" target="_blank" title="LinkedIn">
+                        <span>in</span>
+                    </a>
+                    <a href="https://github.com/techgeeksapparel" class="social-icon" target="_blank" title="GitHub">
+                        <span>⚙</span>
+                    </a>
+                    <a href="https://pinterest.com/techgeeksapparel" class="social-icon" target="_blank" title="Pinterest">
+                        <span>📌</span>
+                    </a>
+                    <!-- ADD MORE SOCIAL LINKS HERE AS NEEDED -->
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 Tech History Archive. Created with ❤️ for vintage computing enthusiasts. | 
+                <a href="https://techgeeksapparel.com" target="_blank" style="color: var(--accent-color);">Vintage Tech-Inspired Apparel</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
